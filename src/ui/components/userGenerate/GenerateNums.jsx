@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { updateUserNums } from '../../../common/features/userNumbersSlice';
 import { saveUserNums } from '../../../common/features/userNumbersSlice';
 import { showModal } from "../../../common/features/modalSlice";
 import { decreaseBalance } from "../../../common/features/userBalanceSlice";
@@ -10,12 +11,26 @@ import "./generateNums.css";
 export default function GenerateNums() {
   const [userNums, setUserNums] = useState({});
   const [uniqueUserNums, setUniqueUserNums ] = useState(false);
+  const userNumbers = useSelector((state) => state.yourNumbers.userNumbers);
+  const winningNums = useSelector((state) => state.winningNumbers.drawnWinningNums);
   const enoughBalance = useSelector((state) => state.yourBalance.enoughBalance);
   const dispatch = useDispatch();
 
   useEffect(() => {
     const uniqueNums = validateUiqueUserNums(Object.values(userNums));
     setUniqueUserNums(uniqueNums);
+
+    if(typeof winningNums[0] === "number") {
+      let userNumbersCopy = [...userNumbers];
+      let updatedUserNums = userNumbersCopy.map((nums) => {
+        if(nums.state === "for_current_draw") {
+          return {...nums, state: "expired"};
+        } else {
+          return nums;
+        }
+      });
+      dispatch(updateUserNums(updatedUserNums));
+    }
   }, [userNums]);
 
   const handleChange = (e) => {
@@ -37,8 +52,13 @@ export default function GenerateNums() {
     })
     if (fiveGoodNumInput === 5) {
       if (enoughBalance) {
+        const userNumsWithMetaData = {
+          userNums: Object.values(userNums),
+          date: getCurrentDate(),
+          state: "new",                         // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< STATE
+        };
         setUserNums(userNums);
-        dispatch(saveUserNums({userNums: Object.values(userNums), date: getCurrentDate(), isArchive: false}));
+        dispatch(saveUserNums(userNumsWithMetaData));
         dispatch(showModal({isOpen: false, message: "", withInputField: false}));
       }
       dispatch(decreaseBalance());

@@ -80,6 +80,7 @@
 }
 
 #user-numbers .data-of-betting {
+  position: relative;
   max-height: calc(100vh - 386px);
   overflow-y: auto;
   justify-content: unset;
@@ -122,6 +123,30 @@
 
 #user-numbers .data-of-betting li .numbers-hit span:first-child {
   margin-left: 3px;
+}
+
+#user-numbers .data-of-betting li .expired {              /*    HERE WEE GOOO !!!    */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 103%;
+  height: 97%;
+  background-color: #ffffff85;
+}
+
+#user-numbers .data-of-betting li .expired span {
+  font-size: 32px;
+  font-weight: 900;
+  color: red;
+}
+
+#user-numbers .data-of-betting li .expired:hover {
+  display: none;
 }
 
 #user-numbers .prize-total {

@@ -17,6 +17,11 @@ export default function AutoGenerateNums() {
     const roundsOfDrawingNums = 1;
     const generatedNums = createUniqueNumsArray(roundsOfDrawingNums);
     setWinningNums(generatedNums[0]);
+
+    // state of UserNumbers
+    // 1: "new" state
+    // 2: "after latest draw" state (no new numbers yet)
+    // 3: "expired" (there are new numbers already)
   }
 
   useEffect(() => {
@@ -25,6 +30,11 @@ export default function AutoGenerateNums() {
 
       if(userNumbers) {
         const updatedUserNumbers = filterWinningNums(winningNums, userNumbers);
+        updatedUserNumbers.forEach((num) => {
+          num.state = "for_current_draw";                                  // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< STATE
+        });
+        console.log("updatedUserNumbers::", updatedUserNumbers);
+
         dispatch(updateUserNums(updatedUserNumbers));
       }
     }

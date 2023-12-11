@@ -18,7 +18,6 @@ export default function UserNumbersPage() {
   const clickHandler = () => {
 
     if(toggleOrder) {
-      console.log("TOGGLE--ORDER");
       const descOrder = [...userNumbers].sort((a, b) => ((b.numOfHits) - (a.numOfHits)));
       setRenderUserNumbers(descOrder);
     } else {
@@ -97,19 +96,25 @@ console.log("reversedUserNumbers", reversedUserNumbers);
                         })
                       }
                     </p>
-                    {<CalculatePrize numOfHits={num.numOfHits} />}
+                    {<CalculatePrize numOfHits={num.numOfHits} stateOfNum={num.state} />}
                   </>
                   }
                   {(typeof winningNumbers[0] === "number" && num.numOfHits === 0) &&
                     <p className="numbers-hit">Hits:&nbsp;no match, sorry!</p>
                   }
+                  {num.state === "expired" &&                                      /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<  STATE  */
+                    <div className="expired">
+                      <span>E X P I R E D</span>
+                    </div>
+                  }
                 </li>
               );
             })}
           </ul>
-          <p className="prize-total">Prize Total:&nbsp;
+          {(typeof winningNumbers[0] === "number") &&
+            <p className="prize-total">Prize Total:&nbsp;
             <span className="number-total">{totalPrize}</span>
-          </p>
+          </p>}
         </>
       }
       <ul className="button-back">

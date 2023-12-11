@@ -4,21 +4,19 @@ import { totalPrize } from "../../../common/features/userBalanceSlice";
 import { calculatePrize } from "../../../common/utils/calculatePrize"
 import "./calculatePrize.css";
 
-export default function CalculatePrize(props) {   //////  >>>>>   num.isArchive = true;    <<<<<    ez kell lefejleszteni és szűrhetővé válnak az archiválandó júzer nyerőszámok !!
-  const {numOfHits} = {...props};
+export default function CalculatePrize(props) {
+  const {numOfHits, stateOfNum} = {...props};
   const [prizeCalculated, setPrizeCalculated] = useState();
   const dispatch = useDispatch();
 
-console.log("CALCULATE COMPONENT RUNS!!");
+//console.log("CALCULATE COMPONENT RUNS!!");
 
   useEffect(() => {
-    console.log("U.E.CALC.PRIZE");
     const prize = calculatePrize(numOfHits);
     setPrizeCalculated(prize);
-    //if(prizeCalculated) {
-      console.log("INNER prizeCalculated",prizeCalculated);
+    if(stateOfNum === "for_current_draw") {                         // <<<<<<<<<<<<<<<<<<<<<<<<<<<<< STATE
       dispatch(totalPrize(prize));
-    //}
+    }
   }, []);
 
   return (
