@@ -1,0 +1,20 @@
+#prize {
+  position: absolute;
+  right: 0;
+  bottom: 3.5px;
+  margin: 0;
+  font-size: 10px;
+}
+
+#prize .prize-amount {
+  margin-left: 5.5px;
+  font-weight: 900;
+  margin: 0;
+}
+
+@media only screen and (min-width: 580px) {
+  #prize {
+    right: unset;   /*   REINVENT THIS PART !!   */
+    left: 0;
+  }
+}

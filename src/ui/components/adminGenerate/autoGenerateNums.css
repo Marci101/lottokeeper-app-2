@@ -1,0 +1,64 @@
+#autogenerate-nums {
+  margin-bottom: 41px;
+}
+
+#autogenerate-nums form {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  gap: 4px;
+}
+
+#autogenerate-nums form input {
+  position: relative;
+  width: 38px;
+  height: 29px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 3.5px;
+  box-shadow: 3px 2px 7px #979797;
+}
+
+input:disabled {
+  background-color: #ffffff;
+}
+
+#autogenerate-nums form input::-webkit-outer-spin-button,
+#autogenerate-nums form input::-webkit-inner-spin-button {
+  display: none;
+}
+
+#autogenerate-nums form input[type=number] {
+  -moz-appearance:textfield;
+}
+
+#autogenerate-nums form button {
+  width: 50%;
+  height: 29px;
+  margin-bottom: 17px;
+  padding: 2px 0;
+  font-weight: 600;
+  color: #334155;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  box-shadow: 3px 2px 7px #979797;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- @media ONLY FOR DESTOP VIEW --- */
+@media (pointer: fine), (pointer: none) {
+  #autogenerate-nums form button:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+#autogenerate-nums form button:active {
+  background-color: #cacaca;
+  box-shadow: 1px 1px 4px #979797;
+  transform: translateY(2.5px);
+}

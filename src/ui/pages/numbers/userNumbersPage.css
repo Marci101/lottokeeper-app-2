@@ -1,0 +1,212 @@
+#user-numbers {
+  position: relative;
+  padding-top: 20px;
+}
+
+#user-numbers #order-list {
+  position: relative;
+}
+
+#user-numbers #order-list p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 4px 23px 4px 6px;
+  font-size: 9.5px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px 3.5px #333333b8;
+  border: 1px solid #ffffffbf;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: 1.5px;
+}
+
+#user-numbers #order-list p span {
+  position: absolute;
+  top: -9px;
+  right: 5px;
+  font-size: 23px;
+  color: #ffffffbf;
+}
+
+#user-numbers .winning-nums {
+  max-width: 206px;
+  margin: 0 auto 6px;
+  padding: 0 0 8px;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #4949495e;
+}
+
+#user-numbers .winning-nums .nums-title {
+  margin: 0;
+}
+
+#user-numbers .winning-nums .nums-row {
+  margin: 0;
+  font-weight: 900;
+}
+
+#user-numbers .winning-nums p span {
+  margin: 0 8px;
+  font-size: 17px;
+  color: #ffe01b;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #917f0c;
+  text-shadow: 3px 3px 6.5px #333333b8;
+}
+
+#user-numbers .page-hint {
+  max-width: 206px;
+  margin: 0 auto 14px;
+  padding: 0 12px;
+  text-align: center;
+}
+
+#user-numbers .page-hint.with-nums {
+  margin: 0 auto 8px;
+}
+
+#user-numbers ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#user-numbers .data-of-betting {
+  max-height: calc(100vh - 386px);
+  overflow-y: auto;
+  justify-content: unset;
+  padding: 3px 6px;
+  border: 1px solid #ffffffbf;
+}
+
+#user-numbers .data-of-betting li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ffffffbf;
+}
+
+#user-numbers .data-of-betting li:last-child {
+  border-bottom: none;
+}
+
+#user-numbers .data-of-betting li .numbers {
+  margin: 0px 0 18px;
+  font-size: 21px;
+  font-weight: 900;
+}
+
+#user-numbers .data-of-betting li .numbers span {
+  margin: 0 8px;
+}
+
+#user-numbers .data-of-betting li .numbers-hit {
+  position: absolute;
+  bottom: 3.5px;
+  margin: 0;
+  font-size: 10px;
+}
+
+#user-numbers .data-of-betting li .numbers-hit span {
+  margin-left: 5.5px;
+  font-weight: 900;
+}
+
+#user-numbers .data-of-betting li .numbers-hit span:first-child {
+  margin-left: 3px;
+}
+
+#user-numbers .prize-total {
+  margin: 5px 0 0;
+  font-size: 10px;
+  text-align: center;
+}
+
+#user-numbers .prize-total .number-total {
+  font-weight: 900;
+}
+
+#user-numbers .data-of-betting li .timedata p {
+  margin: 3px 0 0;
+}
+
+#user-numbers .data-of-betting li .timedata .time-of-bet {
+  font-size: 12px;
+}
+
+#user-numbers .data-of-betting li .timedata .timestamp {
+  font-size: 14px;
+}
+
+#user-numbers .button-back {
+  align-items: center;
+  margin-top: 9px;
+}
+
+@media only screen and (min-width: 580px) {
+  #user-numbers {
+    padding-top: 30px;
+  }
+
+  #user-numbers .page-hint {
+    max-width: 500px;
+    margin: 0 auto 21px;
+  }
+
+  #user-numbers ul {
+    justify-content: center;
+  }
+
+  #user-numbers .data-of-betting {
+    max-height: calc(100vh - 346px);
+    padding: 3px 12px;
+  }
+
+  #user-numbers .data-of-betting li {
+    flex-direction: row-reverse;
+  }
+
+  #user-numbers .data-of-betting li .numbers {
+    margin: 21px 12px 21px 0;
+  }
+
+  #user-numbers .data-of-betting li .numbers span {
+    margin: 0 11px;
+  }
+
+  #user-numbers .data-of-betting li .numbers span:first-child {
+    margin: 0 16px 0 0;
+  }
+
+  #user-numbers .data-of-betting li .timedata p {
+    margin: 3px 0;
+  }
+
+  #user-numbers .data-of-betting li .timedata .timestamp {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  #user-numbers .data-of-betting li .numbers {
+    font-size: 23px;
+  }
+
+  #user-numbers .data-of-betting li .numbers span {
+    margin: 0 16px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #user-numbers .data-of-betting li .numbers span {
+    margin: 0 4px;
+  }
+}

@@ -1,0 +1,15 @@
+#balance {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  row-gap: 11px;
+}
+
+#balance p {
+  margin: 0;
+}
+
+#balance .your-balance {
+  font-weight: 900;
+}

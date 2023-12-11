@@ -1,0 +1,46 @@
+#form-your-name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 20px;
+}
+
+#form-your-name input {
+  height: 29px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  border: none;
+  border-radius: 3.5px;
+  box-shadow: 3px 2px 7px #979797;
+}
+
+#form-your-name button {
+  width: 50px;
+  height: 29px;
+  padding: 2px 0;
+  font-weight: 600;
+  color: #334155;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  box-shadow: 3px 2px 7px #979797;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (pointer: fine), (pointer: none) {
+  #form-your-name button:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+#form-your-name button:active {
+  background-color: #cacaca;
+  box-shadow: 1px 1px 4px #979797;
+  transform: translateY(2.5px);
+}

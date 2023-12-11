@@ -1,0 +1,55 @@
+#generate-nums form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+#generate-nums form input {
+  width: 38px;
+  height: 29px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 3.5px;
+  box-shadow: 3px 2px 7px #979797;
+}
+
+#generate-nums form input::-webkit-outer-spin-button,
+#generate-nums form input::-webkit-inner-spin-button {
+  display: none;
+}
+
+#generate-nums form input[type=number] {
+  -moz-appearance:textfield;
+}
+
+#generate-nums form button {
+  width: 50%;
+  height: 29px;
+  margin-top: 9px;
+  padding: 2px 0;
+  font-weight: 600;
+  color: #334155;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: #e7e7e7;
+  box-shadow: 3px 2px 7px #979797;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- @media ONLY FOR DESTOP VIEW --- */
+@media (pointer: fine), (pointer: none) {
+  #generate-nums form button:hover {
+    background-color: #e0e0e0;
+  }
+}
+
+#generate-nums form button:active {
+  background-color: #cacaca;
+  box-shadow: 1px 1px 4px #979797;
+  transform: translateY(2.5px);
+}
